@@ -7,6 +7,7 @@ using Android.Support.V4.View;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Views;
+using Android.Widget;
 
 namespace AndroidApp3
 {
@@ -30,6 +31,16 @@ namespace AndroidApp3
 
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
+
+            Button button1 = FindViewById<Button>(Resource.Id.button1);
+            button1.Click += Button1_Click;
+            
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Toast.MakeText(this, "Hello，这是按钮点击显示的漂浮条", ToastLength.Long).Show();
+            //throw new NotImplementedException();
         }
 
         public override void OnBackPressed()
